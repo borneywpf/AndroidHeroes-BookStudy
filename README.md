@@ -100,3 +100,15 @@ genymotion的安装
 
 ## 第三章
 本章主要讲述了Android控件架构，View的测量和绘制，ViewGroup的测量和绘制，自定义控件的方式，事件的拦截机制
+
+### Andorid控件架构
+- view视图树，没有视图树的顶部都有一个ViewParent对象，是整棵树的控制核心，所有的交互管理事件都是由它来统一调度和分配的  
+- 每个Activity都有一个Window对象PhoneWindow  
+- 所有View的监听事件都是通过WindowManagerService来接收的，并通过Activity做相应的回调  
+- 通过requestWindowFeature设置Window的特性时，该方法的调用必须在setContentView方法之前  
+
+### View的测量
+- MeasureSpec的作用  
+- 测量模式:EXACTLY（精确模式），AT_MOST（最大值模式）UNSPECIFIED（不确定模式）
+- 如果自定义的View支持wrap_content属性，那么就必须重写onMeasure方法来指定wrap_content时的大小，这也是重写onMeasure方法的目的  
+**参考Heroes的3.2**
