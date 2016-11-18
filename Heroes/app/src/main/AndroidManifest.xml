@@ -7,12 +7,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:debuggable="true"
         android:theme="@style/AppTheme">
 
         <activity android:name=".Main"/>
-        <activity android:name=".chapter3.MainActivity"/>
-        <activity android:name=".chapter4.MainActivity"/>
-        <activity android:name=".chapter5.MainActivity"/>
 
         <activity-alias
             android:name="com.think.heroes.Main"
@@ -24,6 +22,47 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity-alias>
+
+        <activity
+            android:label="@string/chapter3_lesson_3_6_1"
+            android:name=".chapter3.Chapter_3_6_1"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="think.heroes.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="@string/chapter3_lesson_3_6_2"
+            android:name=".chapter3.Chapter_3_6_2"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="think.heroes.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="@string/chapter4_lesson1"
+            android:name=".chapter4.MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="think.heroes.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:label="@string/chapter5_lesson1"
+            android:name=".chapter5.MainActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="think.heroes.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Heroes</string>
+    <string name="chapter3_lesson_3_6_1">第三章/3.6/3.6.1</string>
+    <string name="chapter3_lesson_3_6_2">第三章/3.6/3.6.2</string>
+    <string name="chapter4_lesson1">第四章/第一节</string>
+    <string name="chapter5_lesson1">第五章/第一节</string>
 </resources>

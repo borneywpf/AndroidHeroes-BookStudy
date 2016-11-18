@@ -1,18 +1,18 @@
 package com.think.heroes.base;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.View;
+
+import com.think.heroes.Log;
 
 /**
  * Created by borney on 11/17/16.
  */
 public abstract class BaseActivity extends AppCompatActivity {
-    protected static String MAIN_EXTRY_ACTIVITY_NAME = "main_extry_activity_name";
+    private static final String TAG = "TAG_BaseActivity";
     protected Context mContext;
 
     @Override
@@ -28,21 +28,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract int contentView();
 
     protected void initView() {
-
+        Log.d(TAG, "initView()");
     }
 
     protected void initData() {
-
+        Log.d(TAG, "initData()");
     }
 
     protected void initActionBar() {
-        Intent intent = getIntent();
-        if (intent != null) {
-            String activityName = intent.getStringExtra(MAIN_EXTRY_ACTIVITY_NAME);
-            if (!TextUtils.isEmpty(activityName)) {
-               setTitle(activityName);
-            }
-        }
+        Log.d(TAG, "initActionBar()");
     }
 
     protected <T extends View> T getView(int id) {
