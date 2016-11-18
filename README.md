@@ -112,3 +112,33 @@ genymotion的安装
 - 测量模式:EXACTLY（精确模式），AT_MOST（最大值模式）UNSPECIFIED（不确定模式）
 - 如果自定义的View支持wrap_content属性，那么就必须重写onMeasure方法来指定wrap_content时的大小，这也是重写onMeasure方法的目的  
 **参考Heroes的3.2**
+
+### View的绘制
+- 如何用Canvas在onDraw方法中绘制
+- Canvas canvas = new Canvas(bitmap)；bitmap和canvas是紧密联系的，这个过程称之为装载画布
+
+### ViewGroup的测量
+- ViewGroup管理子View
+- ViewGroup管理子View显示的大小
+- ViewGroup宽高是wrap_content时通过子View的大小来确定自生大小  
+**自定义ViewGroup** 通常要重写onLayout来控制子View的显示位置
+
+### ViewGroup的绘制
+- 通常不需要绘制
+- 如果不指定background不会调用ViewGroup的onDraw方法
+- 通过dispatchDraw方法来绘制子View
+
+### 自定义View
+自定义View就是设计图形，只有站在设计者的角度才能更好的创建自定义View
+
+**自定义View的重要回调方法**  
+- onFinishInflate()： 从XML加载组件后回调
+- onSizeChanged(): 组件大小改变的时候回调
+- onMeasure(): 回调该方法用来测量View
+- onLayout(): 只有ViewGroup才有，用来确定子View显示的位置
+- onTouchEvent(): 监听触摸事件时的回调
+
+**通常的三种自定义控件方法**  
+- 对现有的控件扩展（参考Heroes的3.6.1）
+- 通过组合来实现新的控件（参考Heroes的3.6.2）
+- 重写View来实现新的控件（参考Heroes的3.6.3）
