@@ -59,8 +59,8 @@ android app studio工程开发文件目录略过
 本章主要讲述了最新的android开发工具 Android Studio安装和配置、以及其使用技巧；adb命令使用技巧；Genymotion的使用
 ### Android Studio 下载、配置和使用
 下载
-> 官网(http://developer.android.com/sdk/installing/studio.html)  
-AndroidDevTools(http://www.androiddevtools.cn)  
+> [官网](http://developer.android.com/sdk/installing/studio.html)  
+[AndroidDevTools](http://www.androiddevtools.cn)
 
 配置
 > JDK安装  
@@ -68,12 +68,12 @@ start new project时因为Gradle的下载慢的问题，解决方案(从官网�
 如果将Eclipse工程导入到Studio中  
 Studio主题配置  
 常用配置（悬浮提示窗、Tip提示窗、代码auto complete等）  
-更新SDK  
+更新SDK
 
 使用
 > Studio的常用界面（Debug，系统信息，Cpu，Memory Monitor等）  
 Studio的断点调试查看  
-如何导入已经存在的Studio工程，个人经验（命令行先运行./gradlew下载gradle，然后./gradlew build命令行编译，然后通过studio open工程就没有问题了）  
+如何导入已经存在的Studio工程，个人经验（命令行先运行./gradlew下载gradle，然后./gradlew build命令行编译，然后通过studio open工程就没有问题了）
 
 ### adb 命令的使用
 > adb version  
@@ -81,7 +81,7 @@ adb shell
 adb list targets  
 adb push local remote  
 adb pull remote local  
-adb shell df（系统盘符）  
+adb shell df（系统盘符） 
 adb shell pm（PM管理信息）  
 adb shell am （AM管理信息）  
 adb shell input keyevent（模拟点击）  
@@ -94,23 +94,23 @@ adb reboot（重启）
 > /system/core/toolbox和/framework/base/cmds就是所有adb和shell命令的来源
 
 ### 模拟器安装和配置
-> virtualbox的安装
-genymotion的安装
-启动报错的解决方法(http://blog.csdn.net/LKL9413/article/details/47447087)
+> virtualbox的安装  
+genymotion的安装  
+[启动报错的解决方法](http://blog.csdn.net/LKL9413/article/details/47447087)
 
 ## 第三章
 本章主要讲述了Android控件架构，View的测量和绘制，ViewGroup的测量和绘制，自定义控件的方式，事件的拦截机制
 
 ### Andorid控件架构
-- view视图树，没有视图树的顶部都有一个ViewParent对象，是整棵树的控制核心，所有的交互管理事件都是由它来统一调度和分配的  
-- 每个Activity都有一个Window对象PhoneWindow  
-- 所有View的监听事件都是通过WindowManagerService来接收的，并通过Activity做相应的回调  
-- 通过requestWindowFeature设置Window的特性时，该方法的调用必须在setContentView方法之前  
+- view视图树，没有视图树的顶部都有一个ViewParent对象，是整棵树的控制核心，所有的交互管理事件都是由它来统一调度和分配的
+- 每个Activity都有一个Window对象PhoneWindow
+- 所有View的监听事件都是通过WindowManagerService来接收的，并通过Activity做相应的回调
+- 通过requestWindowFeature设置Window的特性时，该方法的调用必须在setContentView方法之前
 
 ### View的测量
-- MeasureSpec的作用  
+- MeasureSpec的作用
 - 测量模式:EXACTLY（精确模式），AT_MOST（最大值模式）UNSPECIFIED（不确定模式）
-- 如果自定义的View支持wrap_content属性，那么就必须重写onMeasure方法来指定wrap_content时的大小，这也是重写onMeasure方法的目的  
+- 如果自定义的View支持wrap_content属性，那么就必须重写onMeasure方法来指定wrap_content时的大小，这也是重写onMeasure方法的目的
 **参考Heroes的3.2**
 
 ### View的绘制
@@ -120,7 +120,7 @@ genymotion的安装
 ### ViewGroup的测量
 - ViewGroup管理子View
 - ViewGroup管理子View显示的大小
-- ViewGroup宽高是wrap_content时通过子View的大小来确定自生大小  
+- ViewGroup宽高是wrap_content时通过子View的大小来确定自生大小
 **自定义ViewGroup** 通常要重写onLayout来控制子View的显示位置
 
 ### ViewGroup的绘制
@@ -131,14 +131,14 @@ genymotion的安装
 ### 自定义View
 自定义View就是设计图形，只有站在设计者的角度才能更好的创建自定义View
 
-**自定义View的重要回调方法**  
+**自定义View的重要回调方法**
 - onFinishInflate()： 从XML加载组件后回调
 - onSizeChanged(): 组件大小改变的时候回调
 - onMeasure(): 回调该方法用来测量View
 - onLayout(): 只有ViewGroup才有，用来确定子View显示的位置
 - onTouchEvent(): 监听触摸事件时的回调
 
-**通常的三种自定义控件方法**  
+**通常的三种自定义控件方法**
 - 对现有的控件扩展（参考Heroes的3.6.1）
 - 通过组合来实现新的控件（参考Heroes的3.6.2）
 - 重写View来实现新的控件（参考Heroes的3.6.3）
